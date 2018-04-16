@@ -1,0 +1,27 @@
+# IphoneX
+                                Apache License
+                           Version 2.0, January 2004
+                        http://www.apache.org/licenses/
+
+  iPhoneX由于多了大圆角、传感器(齐刘海)以及底部访问主屏幕的指示遮挡，所以需要注意原有这部分内容的设计。 
+iOS11前导航栏的高度是64，其中statusBar的高度为20，而iPhoneX的statusBar高度变为了44，如果是自定义的NaviBar，这部分需要做相应的适配。
+
+iPhoneX的底部增加了虚拟Home区，由于安全区域的原因默认tabBar的高度由49变为83，增高了34，所以自定义的底部TabBar也需要需改其适配方案。
+
+可能有部分APP使用了RN来实现页面，不要忘了在RN中修改相应NaviBar/TabBar的高度。
+
+目前项目碰到了适配问题.看了几个插件,有的可能跑起来需要时间.
+有的比较复杂自己封装了下,觉得还是挺简单的.
+今天放出来,希望大家可以使用.
+
+调用方法
+```
+ <View style={{
+                ...IphoneX.ifIphoneX({
+                    marginTop: -10
+                }, {
+                    marginTop: -22
+                }),
+            }}>
+
+```
